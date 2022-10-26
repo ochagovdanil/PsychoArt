@@ -1,0 +1,518 @@
+// -------------------------------COMMON-----------------------------------
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;700&family=Poppins:wght@500;700&display=swap');
+@import 'partial';
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+:root {
+	scroll-behavior: smooth;
+}
+
+body {
+	color: $white;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	background: linear-gradient(113.49deg, $orange -30.3%, $dark-blue 58.12%)
+		no-repeat;
+}
+
+.wrapper {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.intro {
+	max-width: 410px;
+	margin: 0 auto;
+	text-align: center;
+
+	&__title {
+		font-size: 40px;
+		font-weight: 700;
+		line-height: 1.5;
+		margin-bottom: 10px;
+	}
+
+	&__description {
+		color: $white-alpha-5;
+		font-size: 20px;
+		margin-bottom: 40px;
+	}
+}
+
+.button-icon {
+	margin-left: 10px;
+}
+
+// -----------------------------SPLASH SCREEN---------------------------------
+.splash-screen {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99999999;
+	background-color: $black;
+	font-family: 'IBM Plex Mono', monospace;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	@include transition(all, 0.5s, ease-in-out);
+
+	&__title {
+		font-size: 60px;
+		font-weight: 700;
+		letter-spacing: 5px;
+	}
+
+	&__description {
+		color: $white-alpha-5;
+		font-size: 20px;
+		letter-spacing: 15px;
+		font-weight: 300;
+	}
+}
+
+// -------------------------------TOP BUTTON-----------------------------------
+.top-button {
+	position: fixed;
+	z-index: 999;
+	bottom: 20px;
+	right: 20px;
+	padding: 10px;
+	background-color: $white;
+	cursor: pointer;
+
+	@include border-radius(50%);
+	@include box-shadow(0, 10px, 20px, 0, $black-alpha-25);
+	@include transition(all, 0.2s, ease-in-out);
+	@include scale(0);
+
+	&__icon {
+		color: $black;
+	}
+
+	&--active {
+		@include scale(1);
+	}
+
+	&:hover {
+		opacity: 0.5;
+	}
+}
+
+// -------------------------------HEADER-----------------------------------
+.primary-header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-top: 30px;
+
+	&__logo {
+		flex-basis: 129px;
+		display: block;
+		height: 25px;
+		background-image: url('../assets/logo.svg');
+		background-repeat: no-repeat;
+	}
+
+	&__list {
+		display: flex;
+		gap: 40px;
+		list-style: none;
+	}
+
+	&__link {
+		color: $white;
+		text-decoration: none;
+
+		@include transition(all, 0.2s, ease-in-out);
+
+		&--gradient {
+			background: linear-gradient(
+				214.02deg,
+				$light-purple 6.04%,
+				$dark-purple 92.95%
+			);
+			padding: 10px 20px;
+
+			@include border-radius(10px);
+
+			&:hover {
+				background: $black-alpha-25;
+			}
+		}
+
+		&:hover {
+			color: $white-alpha-5;
+		}
+	}
+}
+
+.form {
+	position: relative;
+
+	&__button {
+		position: absolute;
+		top: calc(50% - 10px);
+		left: 10px;
+		display: block;
+		width: 20px;
+		height: 20px;
+		background-image: url('../assets/search.svg');
+		background-repeat: no-repeat;
+		background-color: transparent;
+		outline: none;
+		border: none;
+	}
+
+	&__input {
+		width: 384px;
+		background: $white-alpha-1;
+		outline: none;
+		border: none;
+		padding: 10px 40px;
+		color: $white;
+
+		@include border-radius(10px);
+
+		&::placeholder {
+			color: $white-alpha-5;
+		}
+	}
+}
+
+// -------------------------------MAIN-----------------------------------
+.main {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 110px 0;
+
+	&__content {
+		flex-basis: 490px;
+	}
+
+	&__title {
+		font-size: 50px;
+		font-weight: 700;
+		line-height: 1.2;
+		margin-top: 0;
+		margin-bottom: 10px;
+	}
+
+	&__description {
+		font-size: 20px;
+		line-height: 1.8;
+		color: $white-alpha-5;
+		margin-top: 0;
+		margin-bottom: 42px;
+	}
+
+	&__button {
+		text-decoration: none;
+		font-size: 20px;
+		color: $white;
+		outline: none;
+		border: none;
+		background-color: $white-alpha-1;
+		padding: 11px 20px;
+
+		@include border-radius(10px);
+		@include transition(all, 0.2s, ease-in-out);
+
+		&:hover {
+			color: $black;
+			background: $white-alpha-5;
+		}
+
+		&--gradient {
+			background: linear-gradient(
+				214.02deg,
+				$light-purple 6.04%,
+				$dark-purple 92.95%
+			);
+			margin-right: 17px;
+
+			&:hover {
+				color: $white-alpha-5;
+				background: $black-alpha-25;
+			}
+		}
+	}
+
+	&__list {
+		display: flex;
+		gap: 70px;
+		list-style: none;
+		margin-top: 60px;
+	}
+
+	&__item {
+		text-align: center;
+		color: $white-alpha-5;
+		font-size: 18px;
+	}
+
+	&__numbers {
+		display: block;
+		color: $white;
+		font-weight: 700;
+		font-size: 30px;
+		margin-bottom: 8px;
+	}
+
+	&__gallery {
+		flex-basis: calc(100% - 490px - 50px);
+	}
+
+	&__image {
+		width: 100%;
+	}
+}
+
+// -------------------------------LOGOS-----------------------------------
+.logos {
+	display: flex;
+	justify-content: space-between;
+}
+
+// -------------------------------FEATURED-----------------------------------
+.featured {
+	margin: 100px auto;
+}
+
+.cards {
+	display: flex;
+	justify-content: space-between;
+	gap: 30px;
+
+	&__item {
+		padding: 26px;
+		background-color: $white-alpha-1;
+		cursor: pointer;
+
+		@include border-radius(10px);
+		@include box-shadow(0, 5px, 10px, 0, $black-alpha-25);
+		@include transition(all, 0.2s, ease-in-out);
+
+		&:hover {
+			background: $white-alpha-5;
+
+			@include translateY(-10px);
+		}
+	}
+
+	&__item:hover &__image {
+		opacity: 0.5;
+	}
+
+	&__image {
+		display: block;
+		max-width: 300px;
+		height: 338px;
+		object-fit: cover;
+		object-position: center;
+
+		@include border-radius(10px);
+		@include transition(all, 0.2s, ease-in-out);
+	}
+
+	&__info {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 26px;
+		margin-bottom: 26px;
+	}
+
+	&__nickname {
+		font-size: 18px;
+		color: $white-alpha-5;
+	}
+
+	&__author {
+		font-size: 20px;
+		font-weight: 700;
+		margin-top: 20px;
+	}
+
+	&__bid {
+		color: $white-alpha-5;
+		font-size: 14px;
+		text-align: right;
+	}
+
+	&__price {
+		display: block;
+		color: $white;
+		font-size: 18px;
+		font-weight: 700;
+		margin-top: 10px;
+	}
+
+	&__button {
+		position: relative;
+		display: block;
+		text-align: center;
+		text-decoration: none;
+		font-size: 20px;
+		color: $white;
+		outline: none;
+		border: none;
+		background-color: $white-alpha-1;
+		padding: 11px 0;
+		background: linear-gradient(
+			214.02deg,
+			$light-purple 6.04%,
+			$dark-purple 92.95%
+		);
+
+		@include border-radius(10px);
+		@include transition(all, 0.2s, ease-in-out);
+
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			opacity: 0;
+			background-image: url('../assets/border.svg');
+			background-size: contain;
+			background-repeat: no-repeat;
+			display: block;
+			width: 100%;
+			height: 50px;
+
+			@include transition(all, 0.2s, ease-in-out);
+		}
+
+		&:hover {
+			background: linear-gradient(
+				45deg,
+				$dark-purple 33%,
+				$light-purple 60%
+			);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+
+			&::after {
+				opacity: 1;
+			}
+		}
+	}
+}
+
+// -------------------------------FAQ-----------------------------------
+.faq {
+	&__questions {
+		display: flex;
+		justify-content: space-between;
+		gap: 20px;
+	}
+
+	&__item {
+		width: 100%;
+	}
+
+	&__collapsible {
+		width: 100%;
+		color: $white-alpha-5;
+		font-size: 18px;
+		background-color: transparent;
+		text-align: left;
+		padding: 20px 0;
+		border: none;
+		border-bottom: 1px solid $white-alpha-5;
+		outline: none;
+		cursor: pointer;
+
+		@include transition(all, 0.2s, ease-in-out);
+
+		&::after {
+			content: '\002B';
+			color: $white-alpha-5;
+			float: right;
+
+			@include transition(all, 0.2s, ease-in-out);
+		}
+
+		&:hover {
+			color: $white;
+			border-color: $white;
+		}
+
+		&:hover::after {
+			color: $white;
+		}
+	}
+
+	&--active {
+		color: $white;
+		border-color: $white;
+
+		&::after {
+			content: '\2212';
+			color: $white;
+
+			@include transition(all, 0.2s, ease-in-out);
+		}
+	}
+
+	&__content {
+		font-size: 15px;
+		line-height: 1.5;
+		margin: 20px 0;
+		max-height: 0;
+		overflow: hidden;
+
+		@include transition(all, 0.2s, ease-in-out);
+	}
+}
+
+// -------------------------------FOOTER-----------------------------------
+.primary-footer {
+	text-align: center;
+	background: linear-gradient(
+		214.02deg,
+		$light-purple 6.04%,
+		$dark-purple 92.95%
+	);
+	padding: 70px 15px;
+	margin: 50px 0;
+
+	@include border-radius(10px);
+
+	&__title {
+		font-size: 40px;
+		font-weight: 700;
+		max-width: 500px;
+		margin: 0 auto 50px;
+	}
+
+	&__button {
+		background: $white-alpha-5;
+		font-size: 18px;
+		color: $white;
+		text-decoration: none;
+		padding: 10px 20px;
+
+		@include border-radius(10px);
+		@include transition(all, 0.2s, ease-in-out);
+
+		&:hover {
+			color: $black;
+			background: $white;
+		}
+	}
+}

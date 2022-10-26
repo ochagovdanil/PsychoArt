@@ -1,0 +1,49 @@
+// -------------------COLORS------------------
+$white: #fff;
+$white-alpha-5: rgba(255, 255, 255, 0.5);
+$white-alpha-1: rgba(255, 255, 255, 0.1);
+$black: #000;
+$black-alpha-25: rgba(0, 0, 0, 0.25);
+$orange: #984d38;
+$dark-blue: #181e41;
+$dark-purple: #671ae4;
+$light-purple: #b75cff;
+
+// -------------------MIXINS------------------
+@mixin border-radius($value) {
+	border-radius: $value;
+	-webkit-border-radius: $value;
+	-moz-border-radius: $value;
+	-ms-border-radius: $value;
+	-o-border-radius: $value;
+}
+
+@mixin transition($prop1, $prop2, $prop3) {
+	transition: $prop1 $prop2 $prop3;
+	-webkit-transition: $prop1 $prop2 $prop3;
+	-moz-transition: $prop1 $prop2 $prop3;
+	-ms-transition: $prop1 $prop2 $prop3;
+	-o-transition: $prop1 $prop2 $prop3;
+}
+
+@mixin box-shadow($prop1, $prop2, $prop3, $prop4, $prop5) {
+	box-shadow: $prop1 $prop2 $prop3 $prop4 $prop5;
+	-webkit-box-shadow: $prop1 $prop2 $prop3 $prop4 $prop5;
+	-moz-box-shadow: $prop1 $prop2 $prop3 $prop4 $prop5;
+}
+
+@mixin translateY($value) {
+	transform: translateY($value);
+	-webkit-transform: translateY($value);
+	-moz-transform: translateY($value);
+	-ms-transform: translateY($value);
+	-o-transform: translateY($value);
+}
+
+@mixin scale($value) {
+	transform: scale($value);
+	-webkit-transform: scale($value);
+	-moz-transform: scale($value);
+	-ms-transform: scale($value);
+	-o-transform: scale($value);
+}
