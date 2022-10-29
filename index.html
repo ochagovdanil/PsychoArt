@@ -28,6 +28,29 @@
 		<div class="top-button">
 			<i class="top-button__icon fa-solid fa-arrow-up fa-xl"></i>
 		</div>
+		<!-- ------------------------MOBILE NAVBAR------------------------------ -->
+		<nav class="mobile-navbar">
+			<i class="mobile-navbar__icon-close fa-solid fa-xmark fa-xl"></i>
+			<ul class="mobile-navbar__list">
+				<input
+					class="mobile-navbar__search"
+					type="search"
+					placeholder="Search items and collections"
+				/>
+				<li class="mobile-navbar__item">
+					<a href="#" class="mobile-navbar__link">Collections</a>
+				</li>
+				<li class="mobile-navbar__item">
+					<a href="#" class="mobile-navbar__link">Feature</a>
+				</li>
+				<li class="mobile-navbar__item">
+					<a href="#" class="mobile-navbar__link">FAQ</a>
+				</li>
+				<li class="mobile-navbar__item">
+					<a href="#" class="mobile-navbar__link">Select Wallet</a>
+				</li>
+			</ul>
+		</nav>
 
 		<div class="wrapper">
 			<!-- ------------------------PRIMARY HEADER------------------------------ -->
@@ -65,6 +88,7 @@
 						</li>
 					</ul>
 				</nav>
+				<button class="primary-header__menu"></button>
 			</header>
 			<!-- ------------------------MAIN CONTENT------------------------------ -->
 			<main class="main">
@@ -76,12 +100,14 @@
 						Lorem ipsum dolor sit amet consectetur adipisicing elit.
 						Similique ipsam et veniam eaque!
 					</p>
-					<a href="#" class="main__button main__button--gradient"
-						>Explore Now<i
-							class="button-icon fa-regular fa-compass"
-						></i
-					></a>
-					<a href="#" class="main__button">Sell NFT</a>
+					<div class="main__buttons">
+						<a href="#" class="main__button main__button--gradient"
+							>Explore Now<i
+								class="button-icon fa-regular fa-compass"
+							></i
+						></a>
+						<a href="#" class="main__button">Sell NFT</a>
+					</div>
 					<ul class="main__list">
 						<li class="main__item">
 							<span class="main__numbers">37k+</span>Artworks

@@ -77,3 +77,20 @@ faqLink.addEventListener('click', function (event) {
 
 	window.scrollTo({ top: faqSectionYOffset - 20, behavior: 'smooth' })
 })
+
+// ----------------------------MOBILE NAVBAR-----------------------------
+var mobileNavbar = document.getElementsByClassName('mobile-navbar')[0]
+var burgerMenu = document.getElementsByClassName('primary-header__menu')[0]
+var closeButton = document.getElementsByClassName(
+	'mobile-navbar__icon-close'
+)[0]
+
+// Open
+burgerMenu.addEventListener('click', function () {
+	mobileNavbar.style.transform = 'scale(1)'
+})
+
+// Close
+closeButton.addEventListener('click', function () {
+	mobileNavbar.style.transform = 'scale(0)'
+})

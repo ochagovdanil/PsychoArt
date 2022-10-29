@@ -30,6 +30,10 @@ body {
 	padding: 0 15px;
 }
 
+.button-icon {
+	margin-left: 10px;
+}
+
 .intro {
 	max-width: 410px;
 	margin: 0 auto;
@@ -49,8 +53,28 @@ body {
 	}
 }
 
-.button-icon {
-	margin-left: 10px;
+@media all and (max-width: 950px) {
+	.intro {
+		&__title {
+			font-size: 30px;
+		}
+
+		&__description {
+			font-size: 16px;
+		}
+	}
+}
+
+@media all and (max-width: 450px) {
+	.intro {
+		&__title {
+			font-size: 25px;
+		}
+
+		&__description {
+			font-size: 14px;
+		}
+	}
 }
 
 // -----------------------------SPLASH SCREEN---------------------------------
@@ -67,6 +91,8 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
+	text-align: center;
+	padding: 0 15px;
 
 	@include transition(all, 0.5s, ease-in-out);
 
@@ -81,6 +107,118 @@ body {
 		font-size: 20px;
 		letter-spacing: 15px;
 		font-weight: 300;
+	}
+}
+
+@media all and (max-width: 1100px) {
+	.splash-screen {
+		&__title {
+			font-size: 50px;
+		}
+
+		&__description {
+			font-size: 18px;
+		}
+	}
+}
+
+@media all and (max-width: 870px) {
+	.splash-screen {
+		&__title {
+			font-size: 40px;
+		}
+
+		&__description {
+			font-size: 16px;
+		}
+	}
+}
+
+@media all and (max-width: 680px) {
+	.splash-screen {
+		&__title {
+			font-size: 30px;
+			letter-spacing: normal;
+		}
+
+		&__description {
+			font-size: 14px;
+			letter-spacing: normal;
+		}
+	}
+}
+
+@media all and (max-width: 450px) {
+	.splash-screen {
+		&__title {
+			font-size: 20px;
+		}
+	}
+}
+
+// -------------------------------MOBILE NAVBAR-----------------------------------
+.mobile-navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 99999;
+	background-color: $black-alpha-85;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	@include transition(all, 0.1s, ease-in-out);
+	@include scale(0);
+
+	&__icon-close {
+		align-self: end;
+		margin: 30px;
+		cursor: pointer;
+
+		@include transition(all, 0.2s, ease-in-out);
+
+		&:hover {
+			color: $white-alpha-5;
+		}
+	}
+
+	&__list {
+		list-style: none;
+	}
+
+	&__item {
+		margin: 20px;
+	}
+
+	&__link {
+		text-decoration: none;
+		color: $white;
+		font-size: 18px;
+
+		@include transition(all, 0.2s, ease-in-out);
+
+		&:hover {
+			color: $white-alpha-5;
+		}
+	}
+
+	&__search {
+		display: block;
+		border: none;
+		outline: none;
+		color: $white;
+		background: transparent;
+		border-bottom: 1px solid $white-alpha-5;
+		padding: 8px 15px;
+		width: calc(100vw - 60px);
+
+		&:hover,
+		&:focus {
+			border-bottom-color: $white;
+		}
 	}
 }
 
@@ -158,6 +296,17 @@ body {
 			color: $white-alpha-5;
 		}
 	}
+
+	&__menu {
+		display: none;
+		height: 20px;
+		width: 27px;
+		border: none;
+		background: transparent;
+		background-image: url('../assets/menu-mobile.svg');
+		outline: none;
+		cursor: pointer;
+	}
 }
 
 .form {
@@ -193,6 +342,44 @@ body {
 	}
 }
 
+@media all and (max-width: 1100px) {
+	.primary-header {
+		&__list {
+			gap: 20px;
+		}
+
+		&__link {
+			&--gradient {
+				padding: 8px 10px;
+			}
+		}
+	}
+
+	.form {
+		&__input {
+			width: 290px;
+			font-size: 14px;
+			padding: 8px 20px 8px 40px;
+		}
+	}
+}
+
+@media all and (max-width: 950px) {
+	.primary-header {
+		&__nav {
+			display: none;
+		}
+
+		&__menu {
+			display: block;
+		}
+	}
+
+	.form {
+		display: none;
+	}
+}
+
 // -------------------------------MAIN-----------------------------------
 .main {
 	display: flex;
@@ -220,6 +407,11 @@ body {
 		margin-bottom: 42px;
 	}
 
+	&__buttons {
+		display: flex;
+		gap: 17px;
+	}
+
 	&__button {
 		text-decoration: none;
 		font-size: 20px;
@@ -243,7 +435,6 @@ body {
 				$light-purple 6.04%,
 				$dark-purple 92.95%
 			);
-			margin-right: 17px;
 
 			&:hover {
 				color: $white-alpha-5;
@@ -254,6 +445,7 @@ body {
 
 	&__list {
 		display: flex;
+		flex-wrap: wrap;
 		gap: 70px;
 		list-style: none;
 		margin-top: 60px;
@@ -282,10 +474,145 @@ body {
 	}
 }
 
+@media all and (max-width: 1100px) {
+	.main {
+		&__title {
+			font-size: 40px;
+		}
+
+		&__description {
+			font-size: 18px;
+		}
+
+		&__button {
+			font-size: 18px;
+		}
+
+		&__list {
+			gap: 50px;
+			margin-top: 40px;
+		}
+
+		&__item {
+			font-size: 16px;
+		}
+
+		&__numbers {
+			font-size: 25px;
+		}
+	}
+}
+
+@media all and (max-width: 950px) {
+	.main {
+		justify-content: center;
+		text-align: center;
+		margin: 70px 0;
+
+		&__buttons {
+			justify-content: center;
+		}
+
+		&__list {
+			justify-content: center;
+		}
+
+		&__gallery {
+			display: none;
+		}
+	}
+}
+
+@media all and (max-width: 650px) {
+	.main {
+		&__title {
+			font-size: 30px;
+		}
+
+		&__description {
+			font-size: 16px;
+		}
+
+		&__button {
+			font-size: 16px;
+			padding: 8px 15px;
+		}
+
+		&__item {
+			font-size: 14px;
+		}
+
+		&__numbers {
+			font-size: 20px;
+		}
+	}
+}
+
+@media all and (max-width: 450px) {
+	.main {
+		&__title {
+			font-size: 25px;
+		}
+
+		&__description {
+			font-size: 14px;
+		}
+
+		&__buttons {
+			flex-direction: column;
+		}
+
+		&__button {
+			font-size: 14px;
+		}
+
+		&__list {
+			gap: 20px;
+		}
+
+		&__numbers {
+			font-size: 18px;
+		}
+	}
+}
+
 // -------------------------------LOGOS-----------------------------------
 .logos {
 	display: flex;
+	flex-wrap: wrap;
 	justify-content: space-between;
+
+	&__image {
+		height: 60px;
+		max-width: 100%;
+	}
+}
+
+@media all and (max-width: 1100px) {
+	.logos {
+		&__image {
+			height: 50px;
+		}
+	}
+}
+
+@media all and (max-width: 950px) {
+	.logos {
+		justify-content: center;
+		gap: 20px 40px;
+
+		&__image {
+			height: 40px;
+		}
+	}
+}
+
+@media all and (max-width: 550px) {
+	.logos {
+		&__image {
+			height: 30px;
+		}
+	}
 }
 
 // -------------------------------FEATURED-----------------------------------
@@ -295,10 +622,12 @@ body {
 
 .cards {
 	display: flex;
-	justify-content: space-between;
-	gap: 30px;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 40px;
 
 	&__item {
+		max-width: 100%;
 		padding: 26px;
 		background-color: $white-alpha-1;
 		cursor: pointer;
@@ -320,7 +649,7 @@ body {
 
 	&__image {
 		display: block;
-		max-width: 300px;
+		max-width: 100%;
 		height: 338px;
 		object-fit: cover;
 		object-position: center;
@@ -381,22 +710,6 @@ body {
 		@include border-radius(10px);
 		@include transition(all, 0.2s, ease-in-out);
 
-		&::after {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			opacity: 0;
-			background-image: url('../assets/border.svg');
-			background-size: contain;
-			background-repeat: no-repeat;
-			display: block;
-			width: 100%;
-			height: 50px;
-
-			@include transition(all, 0.2s, ease-in-out);
-		}
-
 		&:hover {
 			background: linear-gradient(
 				45deg,
@@ -405,10 +718,86 @@ body {
 			);
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
+		}
+	}
+}
 
-			&::after {
-				opacity: 1;
-			}
+@media all and (max-width: 950px) {
+	.featured {
+		margin: 50px auto;
+	}
+
+	.cards {
+		&__nickname {
+			font-size: 16px;
+		}
+
+		&__author {
+			font-size: 18px;
+		}
+
+		&__bid {
+			font-size: 13px;
+		}
+
+		&__price {
+			font-size: 16px;
+		}
+
+		&__button {
+			font-size: 18px;
+		}
+	}
+}
+
+@media all and (max-width: 650px) {
+	.cards {
+		&__item {
+			padding: 15px;
+		}
+
+		&__info {
+			margin-top: 15px;
+			margin-bottom: 15px;
+		}
+	}
+}
+
+@media all and (max-width: 450px) {
+	.cards {
+		&__info {
+			flex-direction: column;
+			justify-content: center;
+			text-align: center;
+		}
+
+		&__image {
+			height: 300px;
+		}
+
+		&__author {
+			font-size: 16px;
+		}
+
+		&__bid {
+			text-align: center;
+			margin-top: 10px;
+		}
+
+		&__price {
+			font-size: 15px;
+		}
+
+		&__button {
+			font-size: 16px;
+		}
+	}
+}
+
+@media all and (max-width: 300px) {
+	.cards {
+		&__image {
+			height: 200px;
 		}
 	}
 }
@@ -480,6 +869,38 @@ body {
 	}
 }
 
+@media all and (max-width: 950px) {
+	.faq {
+		&__collapsible {
+			font-size: 16px;
+		}
+
+		&__content {
+			font-size: 14px;
+		}
+	}
+}
+
+@media all and (max-width: 850px) {
+	.faq {
+		&__questions {
+			flex-direction: column;
+		}
+	}
+}
+
+@media all and (max-width: 450px) {
+	.faq {
+		&__collapsible {
+			font-size: 14px;
+		}
+
+		&__content {
+			font-size: 12px;
+		}
+	}
+}
+
 // -------------------------------FOOTER-----------------------------------
 .primary-footer {
 	text-align: center;
@@ -514,5 +935,47 @@ body {
 			color: $black;
 			background: $white;
 		}
+	}
+}
+
+@media all and (max-width: 1100px) {
+	.primary-footer {
+		&__button {
+			font-size: 16px;
+		}
+	}
+}
+
+@media all and (max-width: 950px) {
+	.primary-footer {
+		&__title {
+			font-size: 30px;
+		}
+	}
+}
+
+@media all and (max-width: 650px) {
+	.primary-footer {
+		&__button {
+			padding: 8px 15px;
+		}
+	}
+}
+
+@media all and (max-width: 450px) {
+	.primary-footer {
+		&__title {
+			font-size: 25px;
+		}
+
+		&__button {
+			font-size: 14px;
+		}
+	}
+}
+
+@media all and (max-width: 350px) {
+	.primary-footer {
+		padding: 50px 15px;
 	}
 }
