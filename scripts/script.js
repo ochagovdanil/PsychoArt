@@ -61,6 +61,7 @@ var featureSection = document.getElementsByClassName('featured')[0]
 var faqSection = document.getElementsByClassName('faq')[0]
 
 var mobileNavbar = document.getElementsByClassName('mobile-navbar')[0]
+var burgerMenu = document.getElementsByClassName('primary-header__menu')[0]
 
 collectionsLink.addEventListener('click', function (event) {
 	event.preventDefault()
@@ -68,7 +69,8 @@ collectionsLink.addEventListener('click', function (event) {
 })
 mobileCollectionsLink.addEventListener('click', function (event) {
 	event.preventDefault()
-	mobileNavbar.style.transform = 'scale(0)'
+	mobileNavbar.classList.toggle('mobile-navbar--active')
+	burgerMenu.classList.toggle('primary-header__menu--active')
 	scrollToCollections()
 })
 
@@ -78,7 +80,8 @@ featureLink.addEventListener('click', function (event) {
 })
 mobileFeatureLink.addEventListener('click', function (event) {
 	event.preventDefault()
-	mobileNavbar.style.transform = 'scale(0)'
+	mobileNavbar.classList.toggle('mobile-navbar--active')
+	burgerMenu.classList.toggle('primary-header__menu--active')
 	scrollToFeature()
 })
 
@@ -88,7 +91,8 @@ faqLink.addEventListener('click', function (event) {
 })
 mobileFaqLink.addEventListener('click', function (event) {
 	event.preventDefault()
-	mobileNavbar.style.transform = 'scale(0)'
+	mobileNavbar.classList.toggle('mobile-navbar--active')
+	burgerMenu.classList.toggle('primary-header__menu--active')
 	scrollToFaq()
 })
 
@@ -112,16 +116,8 @@ function scrollToFaq() {
 // ----------------------------MOBILE NAVBAR-----------------------------
 var mobileNavbar = document.getElementsByClassName('mobile-navbar')[0]
 var burgerMenu = document.getElementsByClassName('primary-header__menu')[0]
-var closeButton = document.getElementsByClassName(
-	'mobile-navbar__icon-close'
-)[0]
 
-// Open
 burgerMenu.addEventListener('click', function () {
-	mobileNavbar.style.transform = 'scale(1)'
-})
-
-// Close
-closeButton.addEventListener('click', function () {
-	mobileNavbar.style.transform = 'scale(0)'
+	burgerMenu.classList.toggle('primary-header__menu--active')
+	mobileNavbar.classList.toggle('mobile-navbar--active')
 })

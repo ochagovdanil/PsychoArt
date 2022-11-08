@@ -41,6 +41,14 @@ $light-purple: #b75cff;
 	-o-transform: translateY($value);
 }
 
+@mixin translateYAndRotate($prop1, $prop2) {
+	transform: translateY($prop1) rotate($prop2);
+	-webkit-transform: translateY($prop1) rotate($prop2);
+	-moz-transform: translateY($prop1) rotate($prop2);
+	-ms-transform: translateY($prop1) rotate($prop2);
+	-o-transform: translateY($prop1) rotate($prop2);
+}
+
 @mixin scale($value) {
 	transform: scale($value);
 	-webkit-transform: scale($value);
