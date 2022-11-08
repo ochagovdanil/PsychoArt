@@ -46,37 +46,68 @@ window.addEventListener('scroll', function () {
 
 // -----------------------PRIMARY HEADER NAVIGATION BAR SCROLLING-----------------------
 var collectionsLink = document.getElementsByClassName('primary-header__link')[0]
+var mobileCollectionsLink = document.getElementsByClassName(
+	'mobile-navbar__link'
+)[0]
 var featureLink = document.getElementsByClassName('primary-header__link')[1]
+var mobileFeatureLink = document.getElementsByClassName(
+	'mobile-navbar__link'
+)[1]
 var faqLink = document.getElementsByClassName('primary-header__link')[2]
+var mobileFaqLink = document.getElementsByClassName('mobile-navbar__link')[2]
 
 var collectionsSection = document.getElementsByClassName('logos')[0]
 var featureSection = document.getElementsByClassName('featured')[0]
 var faqSection = document.getElementsByClassName('faq')[0]
 
+var mobileNavbar = document.getElementsByClassName('mobile-navbar')[0]
+
 collectionsLink.addEventListener('click', function (event) {
 	event.preventDefault()
-
-	var collectionsSectionYOffset =
-		collectionsSection.getBoundingClientRect().top
-
-	window.scrollTo({ top: collectionsSectionYOffset - 20, behavior: 'smooth' })
+	scrollToCollections()
+})
+mobileCollectionsLink.addEventListener('click', function (event) {
+	event.preventDefault()
+	mobileNavbar.style.transform = 'scale(0)'
+	scrollToCollections()
 })
 
 featureLink.addEventListener('click', function (event) {
 	event.preventDefault()
-
-	var featureSectionYOffset = featureSection.getBoundingClientRect().top
-
-	window.scrollTo({ top: featureSectionYOffset - 20, behavior: 'smooth' })
+	scrollToFeature()
+})
+mobileFeatureLink.addEventListener('click', function (event) {
+	event.preventDefault()
+	mobileNavbar.style.transform = 'scale(0)'
+	scrollToFeature()
 })
 
 faqLink.addEventListener('click', function (event) {
 	event.preventDefault()
+	scrollToFaq()
+})
+mobileFaqLink.addEventListener('click', function (event) {
+	event.preventDefault()
+	mobileNavbar.style.transform = 'scale(0)'
+	scrollToFaq()
+})
 
+function scrollToCollections() {
+	var collectionsSectionYOffset =
+		collectionsSection.getBoundingClientRect().top
+
+	window.scrollTo({ top: collectionsSectionYOffset - 20, behavior: 'smooth' })
+}
+function scrollToFeature() {
+	var featureSectionYOffset = featureSection.getBoundingClientRect().top
+
+	window.scrollTo({ top: featureSectionYOffset - 20, behavior: 'smooth' })
+}
+function scrollToFaq() {
 	var faqSectionYOffset = faqSection.getBoundingClientRect().top
 
 	window.scrollTo({ top: faqSectionYOffset - 20, behavior: 'smooth' })
-})
+}
 
 // ----------------------------MOBILE NAVBAR-----------------------------
 var mobileNavbar = document.getElementsByClassName('mobile-navbar')[0]
