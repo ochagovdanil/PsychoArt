@@ -1,6 +1,7 @@
 // -------------------------------COMMON-----------------------------------
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@300;700&family=Poppins:wght@500;700&display=swap');
-@import 'partial';
+@use 'colors';
+@use 'fonts';
+@use 'mixins';
 
 *,
 *::after,
@@ -17,10 +18,14 @@
 }
 
 body {
-	color: $white;
-	font-family: 'Poppins', sans-serif;
+	color: colors.$white;
+	font-family: fonts.$poppins;
 	font-weight: 500;
-	background: linear-gradient(113.49deg, $orange -30.3%, $dark-blue 58.12%)
+	background: linear-gradient(
+			113.49deg,
+			colors.$orange -30.3%,
+			colors.$dark-blue 58.12%
+		)
 		no-repeat;
 }
 
@@ -47,7 +52,7 @@ body {
 	}
 
 	&__description {
-		color: $white-alpha-5;
+		color: colors.$white-alpha-5;
 		font-size: 20px;
 		margin-bottom: 40px;
 	}
@@ -85,8 +90,8 @@ body {
 	width: 100%;
 	height: 100%;
 	z-index: 99999999;
-	background-color: $black;
-	font-family: 'IBM Plex Mono', monospace;
+	background-color: colors.$black;
+	font-family: fonts.$ibm;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -94,7 +99,7 @@ body {
 	text-align: center;
 	padding: 0 15px;
 
-	@include transition(all, 0.5s, ease-in-out);
+	@include mixins.transition(all, 0.5s, ease-in-out);
 
 	&__title {
 		font-size: 60px;
@@ -103,7 +108,7 @@ body {
 	}
 
 	&__description {
-		color: $white-alpha-5;
+		color: colors.$white-alpha-5;
 		font-size: 20px;
 		letter-spacing: 15px;
 		font-weight: 300;
@@ -164,17 +169,17 @@ body {
 	width: 100%;
 	height: 100%;
 	z-index: 999;
-	background-color: $black-alpha-85;
+	background-color: colors.$black-alpha-85;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 
-	@include transition(all, 0.1s, ease-in-out);
-	@include scale(0);
+	@include mixins.transition(all, 0.1s, ease-in-out);
+	@include mixins.scale(0);
 
 	&--active {
-		@include scale(1);
+		@include mixins.scale(1);
 	}
 
 	&__list {
@@ -187,13 +192,13 @@ body {
 
 	&__link {
 		text-decoration: none;
-		color: $white;
+		color: colors.$white;
 		font-size: 18px;
 
-		@include transition(all, 0.2s, ease-in-out);
+		@include mixins.transition(all, 0.2s, ease-in-out);
 
 		&:hover {
-			color: $white-alpha-5;
+			color: colors.$white-alpha-5;
 		}
 	}
 
@@ -201,15 +206,15 @@ body {
 		display: block;
 		border: none;
 		outline: none;
-		color: $white;
+		color: colors.$white;
 		background: transparent;
-		border-bottom: 1px solid $white-alpha-5;
+		border-bottom: 1px solid colors.$white-alpha-5;
 		padding: 8px 15px;
 		width: calc(100vw - 60px);
 
 		&:hover,
 		&:focus {
-			border-bottom-color: $white;
+			border-bottom-color: colors.$white;
 		}
 	}
 }
@@ -221,20 +226,20 @@ body {
 	bottom: 20px;
 	right: 20px;
 	padding: 10px;
-	background-color: $white;
+	background-color: colors.$white;
 	cursor: pointer;
 
-	@include border-radius(50%);
-	@include box-shadow(0, 10px, 20px, 0, $black-alpha-25);
-	@include transition(all, 0.2s, ease-in-out);
-	@include scale(0);
+	@include mixins.border-radius(50%);
+	@include mixins.box-shadow(0, 10px, 20px, 0, colors.$black-alpha-25);
+	@include mixins.transition(all, 0.2s, ease-in-out);
+	@include mixins.scale(0);
 
 	&__icon {
-		color: $black;
+		color: colors.$black;
 	}
 
 	&--active {
-		@include scale(1);
+		@include mixins.scale(1);
 	}
 
 	&:hover {
@@ -264,28 +269,28 @@ body {
 	}
 
 	&__link {
-		color: $white;
+		color: colors.$white;
 		text-decoration: none;
 
-		@include transition(all, 0.2s, ease-in-out);
+		@include mixins.transition(all, 0.2s, ease-in-out);
 
 		&--gradient {
 			background: linear-gradient(
 				214.02deg,
-				$light-purple 6.04%,
-				$dark-purple 92.95%
+				colors.$light-purple 6.04%,
+				colors.$dark-purple 92.95%
 			);
 			padding: 10px 20px;
 
-			@include border-radius(10px);
+			@include mixins.border-radius(10px);
 
 			&:hover {
-				background: $black-alpha-25;
+				background: colors.$black-alpha-25;
 			}
 		}
 
 		&:hover {
-			color: $white-alpha-5;
+			color: colors.$white-alpha-5;
 		}
 	}
 
@@ -302,11 +307,11 @@ body {
 		}
 
 		&--active .primary-header__bar:nth-child(1) {
-			@include translateYAndRotate(8px, 45deg);
+			@include mixins.translateYAndRotate(8px, 45deg);
 		}
 
 		&--active .primary-header__bar:nth-child(3) {
-			@include translateYAndRotate(-8px, -45deg);
+			@include mixins.translateYAndRotate(-8px, -45deg);
 		}
 	}
 
@@ -314,11 +319,11 @@ body {
 		display: block;
 		height: 3px;
 		width: 25px;
-		background-color: $white;
+		background-color: colors.$white;
 		margin: 5px auto;
 
-		@include border-radius(10px);
-		@include transition(all, 0.3s, ease-in-out);
+		@include mixins.border-radius(10px);
+		@include mixins.transition(all, 0.3s, ease-in-out);
 	}
 }
 
@@ -341,16 +346,16 @@ body {
 
 	&__input {
 		width: 384px;
-		background: $white-alpha-1;
+		background: colors.$white-alpha-1;
 		outline: none;
 		border: none;
 		padding: 10px 40px;
-		color: $white;
+		color: colors.$white;
 
-		@include border-radius(10px);
+		@include mixins.border-radius(10px);
 
 		&::placeholder {
-			color: $white-alpha-5;
+			color: colors.$white-alpha-5;
 		}
 	}
 }
@@ -415,7 +420,7 @@ body {
 	&__description {
 		font-size: 20px;
 		line-height: 1.8;
-		color: $white-alpha-5;
+		color: colors.$white-alpha-5;
 		margin-top: 0;
 		margin-bottom: 42px;
 	}
@@ -428,30 +433,30 @@ body {
 	&__button {
 		text-decoration: none;
 		font-size: 20px;
-		color: $white;
+		color: colors.$white;
 		outline: none;
 		border: none;
-		background-color: $white-alpha-1;
+		background-color: colors.$white-alpha-1;
 		padding: 11px 20px;
 
-		@include border-radius(10px);
-		@include transition(all, 0.2s, ease-in-out);
+		@include mixins.border-radius(10px);
+		@include mixins.transition(all, 0.2s, ease-in-out);
 
 		&:hover {
-			color: $black;
-			background: $white-alpha-5;
+			color: colors.$black;
+			background: colors.$white-alpha-5;
 		}
 
 		&--gradient {
 			background: linear-gradient(
 				214.02deg,
-				$light-purple 6.04%,
-				$dark-purple 92.95%
+				colors.$light-purple 6.04%,
+				colors.$dark-purple 92.95%
 			);
 
 			&:hover {
-				color: $white-alpha-5;
-				background: $black-alpha-25;
+				color: colors.$white-alpha-5;
+				background: colors.$black-alpha-25;
 			}
 		}
 	}
@@ -466,13 +471,13 @@ body {
 
 	&__item {
 		text-align: center;
-		color: $white-alpha-5;
+		color: colors.$white-alpha-5;
 		font-size: 18px;
 	}
 
 	&__numbers {
 		display: block;
-		color: $white;
+		color: colors.$white;
 		font-weight: 700;
 		font-size: 30px;
 		margin-bottom: 8px;
@@ -642,17 +647,17 @@ body {
 	&__item {
 		max-width: 100%;
 		padding: 26px;
-		background-color: $white-alpha-1;
+		background-color: colors.$white-alpha-1;
 		cursor: pointer;
 
-		@include border-radius(10px);
-		@include box-shadow(0, 5px, 10px, 0, $black-alpha-25);
-		@include transition(all, 0.2s, ease-in-out);
+		@include mixins.border-radius(10px);
+		@include mixins.box-shadow(0, 5px, 10px, 0, colors.$black-alpha-25);
+		@include mixins.transition(all, 0.2s, ease-in-out);
 
 		&:hover {
-			background: $white-alpha-5;
+			background: colors.$white-alpha-5;
 
-			@include translateY(-10px);
+			@include mixins.translateY(-10px);
 		}
 	}
 
@@ -667,8 +672,8 @@ body {
 		object-fit: cover;
 		object-position: center;
 
-		@include border-radius(10px);
-		@include transition(all, 0.2s, ease-in-out);
+		@include mixins.border-radius(10px);
+		@include mixins.transition(all, 0.2s, ease-in-out);
 	}
 
 	&__info {
@@ -680,7 +685,7 @@ body {
 
 	&__nickname {
 		font-size: 18px;
-		color: $white-alpha-5;
+		color: colors.$white-alpha-5;
 	}
 
 	&__author {
@@ -690,14 +695,14 @@ body {
 	}
 
 	&__bid {
-		color: $white-alpha-5;
+		color: colors.$white-alpha-5;
 		font-size: 14px;
 		text-align: right;
 	}
 
 	&__price {
 		display: block;
-		color: $white;
+		color: colors.$white;
 		font-size: 18px;
 		font-weight: 700;
 		margin-top: 10px;
@@ -709,25 +714,25 @@ body {
 		text-align: center;
 		text-decoration: none;
 		font-size: 20px;
-		color: $white;
+		color: colors.$white;
 		outline: none;
 		border: none;
-		background-color: $white-alpha-1;
+		background-color: colors.$white-alpha-1;
 		padding: 11px 0;
 		background: linear-gradient(
 			214.02deg,
-			$light-purple 6.04%,
-			$dark-purple 92.95%
+			colors.$light-purple 6.04%,
+			colors.$dark-purple 92.95%
 		);
 
-		@include border-radius(10px);
-		@include transition(all, 0.2s, ease-in-out);
+		@include mixins.border-radius(10px);
+		@include mixins.transition(all, 0.2s, ease-in-out);
 
 		&:hover {
 			background: linear-gradient(
 				45deg,
-				$dark-purple 33%,
-				$light-purple 60%
+				colors.$dark-purple 33%,
+				colors.$light-purple 60%
 			);
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
@@ -829,45 +834,45 @@ body {
 
 	&__collapsible {
 		width: 100%;
-		color: $white-alpha-5;
+		color: colors.$white-alpha-5;
 		font-size: 18px;
 		background-color: transparent;
 		text-align: left;
 		padding: 20px 0;
 		border: none;
-		border-bottom: 1px solid $white-alpha-5;
+		border-bottom: 1px solid colors.$white-alpha-5;
 		outline: none;
 		cursor: pointer;
 
-		@include transition(all, 0.2s, ease-in-out);
+		@include mixins.transition(all, 0.2s, ease-in-out);
 
 		&::after {
 			content: '\002B';
-			color: $white-alpha-5;
+			color: colors.$white-alpha-5;
 			float: right;
 
-			@include transition(all, 0.2s, ease-in-out);
+			@include mixins.transition(all, 0.2s, ease-in-out);
 		}
 
 		&:hover {
-			color: $white;
-			border-color: $white;
+			color: colors.$white;
+			border-color: colors.$white;
 		}
 
 		&:hover::after {
-			color: $white;
+			color: colors.$white;
 		}
 	}
 
 	&--active {
-		color: $white;
-		border-color: $white;
+		color: colors.$white;
+		border-color: colors.$white;
 
 		&::after {
 			content: '\2212';
-			color: $white;
+			color: colors.$white;
 
-			@include transition(all, 0.2s, ease-in-out);
+			@include mixins.transition(all, 0.2s, ease-in-out);
 		}
 	}
 
@@ -878,7 +883,7 @@ body {
 		max-height: 0;
 		overflow: hidden;
 
-		@include transition(all, 0.2s, ease-in-out);
+		@include mixins.transition(all, 0.2s, ease-in-out);
 	}
 }
 
@@ -919,13 +924,13 @@ body {
 	text-align: center;
 	background: linear-gradient(
 		214.02deg,
-		$light-purple 6.04%,
-		$dark-purple 92.95%
+		colors.$light-purple 6.04%,
+		colors.$dark-purple 92.95%
 	);
 	padding: 70px 15px;
 	margin: 50px 0;
 
-	@include border-radius(10px);
+	@include mixins.border-radius(10px);
 
 	&__title {
 		font-size: 40px;
@@ -935,18 +940,18 @@ body {
 	}
 
 	&__button {
-		background: $white-alpha-5;
+		background: colors.$white-alpha-5;
 		font-size: 18px;
-		color: $white;
+		color: colors.$white;
 		text-decoration: none;
 		padding: 10px 20px;
 
-		@include border-radius(10px);
-		@include transition(all, 0.2s, ease-in-out);
+		@include mixins.border-radius(10px);
+		@include mixins.transition(all, 0.2s, ease-in-out);
 
 		&:hover {
-			color: $black;
-			background: $white;
+			color: colors.$black;
+			background: colors.$white;
 		}
 	}
 }
