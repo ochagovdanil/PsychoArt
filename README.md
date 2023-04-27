@@ -49,11 +49,13 @@
 	<li>CSS</li>
 	<li>BEM</li>
 	<li>SCSS</li>
-	<li>normalize.css</li>
-	<li>AOS Library</li>
 	<li>JavaScript</li>
 	<li>Font Awesome Icons</li>
 	<li>SVG Icons</li>
+	<li>npm</li>
+	<li>normalize.css</li>
+	<li>AOS Library</li>
+	<li>ESLint (Airbnb)</li>
 </ul>
 
 <!-- --------CONTRIBUTING-------- -->

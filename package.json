@@ -1,0 +1,36 @@
+{
+	"name": "psychoart",
+	"version": "1.0.0",
+	"description": "Creative NFTs",
+	"main": "scripts/script.js",
+	"scripts": {
+		"test": "echo PsychoArt - Creative NFTs",
+		"sass": "sass --watch --style=compressed styles/index.scss styles/index.css",
+		"lint": "eslint scripts/script.js",
+		"lint:fix": "eslint scripts/script.js --fix"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/ochagovdanil/PsychoArt.git"
+	},
+	"keywords": [
+		"psychoart",
+		"NFTs"
+	],
+	"author": "Danil Ochagov",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/ochagovdanil/PsychoArt/issues"
+	},
+	"homepage": "https://github.com/ochagovdanil/PsychoArt#readme",
+	"devDependencies": {
+		"eslint": "^8.39.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-plugin-import": "^2.27.5",
+		"sass": "^1.62.1"
+	},
+	"dependencies": {
+		"aos": "^2.3.4",
+		"normalize.css": "^8.0.1"
+	}
+}
