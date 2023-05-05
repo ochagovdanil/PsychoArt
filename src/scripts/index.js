@@ -1,3 +1,5 @@
+import '../styles/index.scss';
+
 const splashScreen = document.querySelector('.splash-screen');
 const accordions = document.getElementsByClassName('faq__collapsible');
 const buttonTopPage = document.querySelector('.top-button');

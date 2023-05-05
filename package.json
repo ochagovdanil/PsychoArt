@@ -5,9 +5,10 @@
 	"main": "scripts/script.js",
 	"scripts": {
 		"test": "echo PsychoArt - Creative NFTs",
-		"sass": "sass --watch --style=compressed styles/index.scss styles/index.css",
-		"lint": "eslint scripts/script.js",
-		"lint:fix": "eslint scripts/script.js --fix"
+		"lint": "eslint . --ext .js",
+		"lint:fix": "eslint . --ext .js --fix",
+		"start": "webpack serve --config webpack.dev.js",
+		"build": "webpack --config webpack.prod.js"
 	},
 	"repository": {
 		"type": "git",
@@ -24,13 +25,22 @@
 	},
 	"homepage": "https://github.com/ochagovdanil/PsychoArt#readme",
 	"devDependencies": {
+		"@babel/core": "^7.21.8",
+		"@babel/preset-env": "^7.21.5",
+		"babel-loader": "^9.1.2",
+		"css-loader": "^6.7.3",
 		"eslint": "^8.39.0",
 		"eslint-config-airbnb-base": "^15.0.0",
 		"eslint-plugin-import": "^2.27.5",
-		"sass": "^1.62.1"
-	},
-	"dependencies": {
-		"aos": "^2.3.4",
-		"normalize.css": "^8.0.1"
+		"html-loader": "^4.2.0",
+		"html-webpack-plugin": "^5.5.1",
+		"mini-css-extract-plugin": "^2.7.5",
+		"sass": "^1.62.1",
+		"sass-loader": "^13.2.2",
+		"webpack": "^5.82.0",
+		"webpack-bundle-analyzer": "^4.8.0",
+		"webpack-cli": "^5.0.2",
+		"webpack-dev-server": "^4.13.3",
+		"webpack-merge": "^5.8.0"
 	}
 }
