@@ -20,7 +20,6 @@
 <div align="center">
 	<img src="./src/favicon.ico" alt="Logo" />
 	<p><strong>PsychoArt - Creative NFTs</strong></p>
-	<a href="https://ochagovdanil.github.io/PsychoArt/" target="_blank">Visit the page</a>
 </div>
 
 <!-- --------TABLE OF CONTENTS-------- -->
