@@ -24,6 +24,9 @@ module.exports = merge(common, {
     new MiniCssExtractPlugin({
       filename: 'styles/[name].css',
     }),
-    new WebpackBundleAnalyzer(),
+    new WebpackBundleAnalyzer({
+      openAnalyzer: false,
+      analyzerPort: 8000,
+    }),
   ],
 });
