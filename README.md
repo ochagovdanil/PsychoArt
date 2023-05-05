@@ -18,7 +18,7 @@
 <!-- --------LOGO-------- -->
 <br />
 <div align="center">
-	<img src="favicon.svg" alt="Logo" />
+	<img src="./src/favicon.ico" alt="Logo" />
 	<p><strong>PsychoArt - Creative NFTs</strong></p>
 	<a href="https://ochagovdanil.github.io/PsychoArt/" target="_blank">Visit the page</a>
 </div>
@@ -41,7 +41,7 @@
 ## About The Project
 
 <div align="center">
-	<img src="assets/preview.jpg" alt="Preview" />
+	<img src="./src/assets/preview.jpg" alt="Preview" />
 </div>
 <p><strong>PsychoArt</strong> - creative NFTs built via:</p>
 <ul>
@@ -56,6 +56,8 @@
 	<li>normalize.css</li>
 	<li>AOS Library</li>
 	<li>ESLint (Airbnb)</li>
+	<li>Babel</li>
+	<li>Webpack</li>
 </ul>
 
 <!-- --------CONTRIBUTING-------- -->
