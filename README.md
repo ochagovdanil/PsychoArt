@@ -1,25 +1,8 @@
-<!-- --------STATS-------- -->
-<a href="https://github.com/ochagovdanil/PsychoArt/graphs/contributors">
-	<img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/ochagovdanil/PsychoArt.svg" />
-</a>
-<a href="https://github.com/ochagovdanil/PsychoArt/network/members">
-	<img alt="Issues" src="https://img.shields.io/github/forks/ochagovdanil/PsychoArt.svg" />
-</a>
-<a href="https://github.com/ochagovdanil/PsychoArt/stargazers">
-	<img alt="Issues" src="https://img.shields.io/github/stars/ochagovdanil/PsychoArt.svg" />
-</a>
-<a href="https://github.com/ochagovdanil/PsychoArt/issues">
-	<img alt="Issues" src="https://img.shields.io/github/issues/ochagovdanil/PsychoArt.svg" />
-</a>
-<a href="https://opensource.org/licenses/MIT">
-	<img alt="Issues" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
-</a>
-
 <!-- --------LOGO-------- -->
 <br />
 <div align="center">
-	<img src="./src/favicon.ico" alt="Logo" />
-	<p><strong>PsychoArt - Creative NFTs</strong></p>
+	<img src="./src/favicon.ico" alt="Logo" height="130" style="margin-bottom: 20px" />
+	<p><strong>PsychoArt</strong> - Creative NFTs website</p>
 </div>
 
 <!-- --------TABLE OF CONTENTS-------- -->
@@ -29,6 +12,7 @@
     <li>
       <a href="#about-the-project">About The Project</a>
     </li>
+    <li><a href="#set-up-instructions">Set up instructions</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -42,7 +26,7 @@
 <div align="center">
 	<img src="./src/assets/preview.jpg" alt="Preview" />
 </div>
-<p><strong>PsychoArt</strong> - creative NFTs built via:</p>
+<p><strong>PsychoArt</strong> - creative NFTs website built via:</p>
 <ul>
 	<li>HTML</li>
 	<li>CSS</li>
@@ -58,6 +42,12 @@
 	<li>Babel</li>
 	<li>Webpack</li>
 </ul>
+
+<!-- SET UP INSTRUCTIONS -->
+
+## Set up instructions
+
+In order to run this wonderful website and see the whole beauty of it you need to run `npm i` command to install all necessary dependencies. Then type `npm run start` to make webpack serve your source files and open the browser.
 
 <!-- --------CONTRIBUTING-------- -->
 
@@ -84,6 +74,12 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Danil Ochagov - danilochagov@gmail.com
+Danil Ochagov
+
+Email: danilochagov@gmail.com
+
+Telegram: @danilochagov
+
+VK: https://vk.com/danilochagov
 
 Project Link: [https://github.com/ochagovdanil/PsychoArt](https://github.com/ochagovdanil/PsychoArt)
